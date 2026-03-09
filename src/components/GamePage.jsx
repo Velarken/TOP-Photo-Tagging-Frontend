@@ -1,5 +1,6 @@
-import '../styles/Game.css';
+import '../styles/GamePage.css';
 import { useRef, useState, useEffect } from 'react';
+import Timer from './Timer';
 
 export function Game({
 
@@ -20,7 +21,7 @@ export function Game({
     }, [])
     
     return (
-        <div className='game-container'>
+        <div className='game-container content'>
             <div className="character-list">
                 <ul>
                     <li>Zombie Wizard</li>
@@ -29,8 +30,11 @@ export function Game({
                     <li>Ghoul Nurse</li>
                 </ul>
             </div>
-            <div className="game-board"></div>
+            <div className="game-board">
+                <img src="/med_difficulty.jpg" alt="search and find image" />
+            </div>
             <div className="scoreboard">
+                <Timer />
                 <ul>
                     <li>James</li>
                     <li>Mary</li>
