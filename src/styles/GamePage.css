@@ -25,3 +25,11 @@
     border: 2px solid red;
     height:100%;
 }
+.custom-cursor {
+    position:fixed;
+    width:8vw;
+    height:8vw;
+    border:4px outset rgb(212, 212, 212);
+    offset: 0;
+    cursor: none;
+}

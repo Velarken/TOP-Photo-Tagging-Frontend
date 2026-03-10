@@ -13,13 +13,18 @@ export function Game({
         const cursor = cursorRef.current;
         cursor.style.transform = `translate(${xPos}px, ${yPos}px)`
     }
+    const handleMouseClick = (e) => {
+        const xPos = e.clientX;
+        const yPos = e.clientY;
+        console.log('Position data sent to backend for validation. Data sent: ', 'x:',e.clientX,'y:',e.clientY)
+    }
     useEffect(() => {
         window.addEventListener('mousemove', handleMouseMove)
         return () => {
             window.removeEventListener('mousemove', handleMouseMove)
         }
     }, [])
-    
+    console.table(cursorRef.current)
     return (
         <div className='game-container content'>
             <div className="character-list">
@@ -30,7 +35,7 @@ export function Game({
                     <li>Ghoul Nurse</li>
                 </ul>
             </div>
-            <div className="game-board">
+            <div className="game-board" onClick={(e) => handleMouseClick(e)}>
                 <img src="/med_difficulty.jpg" alt="search and find image" />
             </div>
             <div className="scoreboard">
